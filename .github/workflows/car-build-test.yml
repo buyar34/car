@@ -28,13 +28,21 @@ jobs:
           echo "kaport" >> araba.txt
           echo "motor" >> araba.txt
           echo "tekerlekler" >> araba.txt
-          
+      - name: araba.txt yi diğer joba taşımak
+        uses: actions/upload/artifact@v2
+        with:
+          name: araba.txt
+          path: ./
   job2-arabayi-test-et:
     needs: job1-arabayi-build-et
     # The type of runner that the job will run on
     runs-on: windows-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: araba.txt yi diğer jobdan bu joba taşımak (download etmek)
+        uses: actions/upload/artifact@v2
+        with:
+          name: araba.txt
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
