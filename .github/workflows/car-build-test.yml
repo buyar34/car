@@ -29,7 +29,7 @@ jobs:
           echo "motor" >> araba.txt
           echo "tekerlekler" >> araba.txt
       - name: araba.txt yi diğer joba taşımak
-        uses: actions/upload/artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: araba.txt
           path: ./
@@ -40,7 +40,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: araba.txt yi diğer jobdan bu joba taşımak (download etmek)
-        uses: actions/download/artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: araba.txt
       # Runs a set of commands using the runners shell
