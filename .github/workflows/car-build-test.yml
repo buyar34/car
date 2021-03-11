@@ -40,7 +40,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: araba.txt yi diğer jobdan bu joba taşımak (download etmek)
-        uses: actions/upload/artifact@v2
+        uses: actions/download/artifact@v2
         with:
           name: araba.txt
       # Runs a set of commands using the runners shell
